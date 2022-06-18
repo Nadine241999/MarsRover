@@ -1,0 +1,33 @@
+Test 1:
+Part 2:
+Enter X axis: 2
+Enter  y axis: 4
+Enter Command: FFFRBL
+Obstacle !. Stopped at : (2, 7)North
+
+Test 2:
+Part 2:
+Enter X axis: 6
+Enter  y axis: 4
+Enter Command: FLFFFRFLB
+Obstacle !. Stopped at : (2, 7)North
+
+Test 3:
+Part 2:
+Enter X axis: 9
+Enter  y axis: -1
+Enter Command: FFFFFBFFFFF
+(9, -2)South
+
+Test 4:
+Part 2:
+Enter X axis: 0
+Enter  y axis: 0
+Enter Command: BBBBFFFFF
+Obstacle !. Stopped at : (0, 1)North
+
+Test 5:
+Enter X axis: 1
+Enter  y axis: 5 
+Enter Command: FFRBFL
+Obstacle !. Stopped at : (1, 5)North

@@ -1,0 +1,26 @@
+Part 2
+Note: //Once You Put -1 as x-axis and -1 as y-xis in obstacles that's means that we stopped to put in the list and the output will appear
+Test 1:
+
+Enter X axis: 3
+Enter  y axis: 4
+Enter direction: north 
+Enter Command: ff
+Enter obstacles: 0 1
+1 1
+-1 -1
+Ans: (3, 6)north
+
+/////////////////////////////////////////////////////////////
+
+Part 1:
+Test 1:
+
+Enter X axis: 3
+Enter  y axis: 3
+Enter direction: North
+Enter Command: ffrb
+Ans: (2, 5)east
+
+
+

@@ -1,6 +1,9 @@
 # MarsRover
-PART 1 has to be done either with  (BFS) algorithm traverses  OR with functional programming for example lambda expressions
-PART 2 is simply have added lists one for obstacles to check with it where we have to stop 
+# PART 1 
+has to be done either with  (BFS) algorithm traverses  OR with functional programming for example lambda expressions
+
+# PART 2 
+is simply have added lists one for obstacles to check with it where we have to stop 
 
 
  The actual implementation should be with BFS. The reason is:

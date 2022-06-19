@@ -5,141 +5,123 @@
 ***************************/
 import java.io.*;
 import java.util.*;
-public class Main
-{
+   class rover{
+       int x_axis = 0;
+    int y_axis = 0;
+    String directions = "north";
+    String Command = "F";
+     
 
-  public static void main (String[]args)
-  {
-  int x_axis = 0;
-  int y_axis = 0;
-  String directions = "North";
-  String Command = "F";
-  Scanner sc = new Scanner(System.in);
-  System.out.print("Enter X axis: ");
- x_axis = sc.nextInt();
- System.out.print("Enter  y axis: "); 
- y_axis = sc.nextInt();
- //System.out.print("Enter direction: ");
- //directions = sc.next();
-  System.out.print("Enter Command: ");
- Command = sc.next();
- for(int i = 0 ; i<Command.length();i++)
- {
- if(Command.charAt(i) == 'F' || Command.charAt(i) == 'f'){
+   
+   
+   public void move(int movement)
+   {
   
-      
- if(directions == "North" || directions == "north" || directions == "NORTH" || directions == "NoRth" || directions =="NOrth")
- {
-  directions = "North";
-  y_axis = y_axis+1;
- }
-else if(directions == "South" || directions == "south" || directions == "SOUTH"|| directions == "SoUth" || directions == "SOuth")
-{
-directions = "South";
-y_axis = y_axis-1;
-}
- else if(directions == "East" || directions == "EAST" || directions == "EAst"|| directions == "EaSt" || directions == "east" || directions == "EaSt")
-{
-directions = "East";
-x_axis = x_axis+1;
-}
-else if(directions == "West" || directions == "WEST" || directions == "WEst" || directions == "WeST" || directions == "west" || directions == "weST")
-{
-directions = "West";
-x_axis = x_axis-1;
+    if (directions.equals("north") ) 
+    {
+        y_axis +=  movement;
+    } 
+    else if (directions.equals("south") ) 
+    {
+        y_axis -=  movement;
+    } 
+    else if ( directions.equals("east") ) 
+    {
+        x_axis +=  movement;
+    } 
+    else if ( directions.equals("west") ) 
+    {
+        x_axis -=  movement;
+    }
+
+   }
+   public void rotateLeft()
+   {
+    if (directions.equals("north")) 
+    {
+        directions = "west";
+    } 
+    else if (directions.equals("south")) 
+    {
+        directions = "east";
+    } 
+    else if ( directions.equals("east")) 
+    {
+        directions = "north";
+    } 
+    else if ( directions.equals("west")) 
+    {
+        directions = "south";
+    }
+    }
+    public  void rotateRight()
+   {
+    if (directions.equals("north")) 
+    {
+        directions = "east";
+    } 
+    else if (directions.equals("west")) 
+    {
+        directions = "north";
+    } 
+    else if ( directions.equals("east")) 
+    {
+        directions = "south";
+    } 
+    else if ( directions.equals("south")) 
+    {
+        directions = "west";
+    }
+    }
+   
 }
 
-
- }
- 
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- else if(Command.charAt(i) == 'B' || Command.charAt(i) == 'b')
- {
-
-
-  if(directions == "North" || directions == "north" || directions == "NORTH" || directions == "NoRth" || directions =="NOrth")
- {
- directions = "South";
-  y_axis = y_axis-1;
- }
- else if(directions == "South" || directions == "south" || directions == "SOUTH"|| directions == "SoUth" || directions == "SOuth")
-{
-directions = "North";
- y_axis = y_axis+1;
-}
- else if(directions == "East" || directions == "EAST" || directions == "EAst"|| directions == "EaSt" || directions == "east" || directions == "EaSt")
-{
-directions = "West";
-x_axis = x_axis-1;
-}
-else if(directions == "West" || directions == "WEST" || directions == "WEst" || directions == "WeST" || directions == "west" || directions == "weST")
-{
-directions = "East";
-x_axis = x_axis+1;
-}
- 
- 
- 
- }
- else if(Command.charAt(i) == 'R' || Command.charAt(i) == 'r')
- {
+public class Main {
 
  
+  public static void main(String[] args) {
+      rover obj= new rover();
+     
 
- if(directions == "North" || directions == "north" || directions == "NORTH" || directions == "NoRth" || directions =="NOrth")
- {
- directions = "East";
-  x_axis = x_axis+1;
- }
- else if(directions == "South" || directions == "south" || directions == "SOUTH"|| directions == "SoUth" || directions == "SOuth")
-{
-directions = "West";
-x_axis = x_axis-1;
-}
- else if(directions == "East" || directions == "EAST" || directions == "EAst"|| directions == "EaSt" || directions == "east" || directions == "EaSt")
-{
-directions = "South";
-y_axis = y_axis-1;
-}
-else if(directions == "West" || directions == "WEST" || directions == "WEst" || directions == "WeST" || directions == "west" || directions == "weST")
-{
-directions = "North";
-y_axis = y_axis+1;
-}
- 
- 
- 
- 
- }//hna
- else if (Command.charAt(i) == 'L'|| Command.charAt(i) == 'l')
- {
+      Scanner sc = new Scanner(System.in);
+    System.out.print("Enter X axis: ");
+               obj.x_axis = sc.nextInt();
+    System.out.print("Enter  y axis: ");
+                        obj.y_axis = sc.nextInt();
+      System.out.print("Enter direction: ");
+    obj.directions = sc.next();
+    System.out.print("Enter Command: ");
+    obj.Command = sc.next();
 
+    
+
+    obj.directions = obj.directions.toLowerCase();
+    obj.Command = obj.Command.toLowerCase();
  
- if(directions == "North" || directions == "north" || directions == "NORTH" || directions == "NoRth" || directions =="NOrth")
- {
-  directions = "West";
-  x_axis = x_axis-1;
- 
- }
-else if (directions == "South" || directions == "south" || directions == "SOUTH"|| directions == "SoUth" || directions =="SOuth")
-{
-directions = "East";
-x_axis = x_axis+1;
-}
-else if(directions == "East" || directions == "EAST" || directions == "EAst"|| directions == "EaSt" || directions == "east" || directions == "EaSt")
-{
-directions = "North";
-y_axis = y_axis +1;
-}
-else if(directions == "West" || directions == "WEST"|| directions == "WEst" || directions == "WeST" || directions == "west" || directions == "weST")
-{
-directions = "South";
-y_axis = y_axis -1;
-}
- }
- 
- }
- System.out.print("Ans: " + "(" + x_axis +", "+ y_axis +")" +  directions);
- 
-}
+   for(int i=0 ;i<obj.Command.length();i++)
+   {
+       
+       char ch=obj.Command.charAt(i);
+
+       switch (ch) {
+           case 'f':
+               obj.move(1);
+               break;
+               case 'b':
+               obj.move(-1);
+               break;
+               case 'l':
+               obj.rotateLeft();
+               break;
+               case 'r':
+               obj.rotateRight();
+               break;
+           default:
+               break;
+       }
+       
+   }
+
+    System.out.print("Ans: " + "(" + obj.x_axis + ", " + obj.y_axis + ")" + obj.directions);
+  }
 }
